@@ -1,11 +1,60 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import Badge from '../components/Badge.astro';
+import Experiencia from '../components/Experiencia.astro';
+import Book from '../components/icons/book.astro';
+import Code from '../components/icons/Code.astro';
+import Github from '../components/icons/Github.astro';
+import Linkedin from '../components/icons/Linkedin.astro';
+import Mail from '../components/icons/Mail.astro';
+import Projects from '../components/Projects.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import SocialPill from '../components/SocialPill.astro';
 import Layout from '../layouts/Layout.astro';
+
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Portfolio de Tomás" description="Desarrollador y programador Web y Móvil">
+	<main class="px-4">
+		<SectionContainer class="pt-40 pb-15" id="sobre-mi">
+			<img class="rounded-full w-[70px] h-[70px] mb-7" src="/public/tomas_photo.jpg" alt="foto Tomás">
+
+			<h1 class="text-white text-2xl md:text-4xl lg:text-5xl font-bold flex  flex-row gap-x-4 pb-6 lg:pb-8">
+				Hey, soy Tomás 
+				<a href="https://www.linkedin.com/in/tom%C3%A1s-uh%C3%ADa-otero-b10748345/" target="_blank" class="flex justify-center items-center " rel="noopener">
+					<Badge>Disponible para trabajar</Badge>
+				</a>
+			</h1>  
+			<h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
+				<span class="text-purple-400">Desarrolador Web y Móvil 💻📱.</span> 
+				<span class="opacity-80">Soy de Pontevedra, Galicia 🌊 y he realizado mis estudios en Santiago de Compostela ⛪</span>
+			</h2>
+
+			<ul>
+				<li>
+					<nav class="flex gap-6 mt-4 flex-wrap">
+						<SocialPill href="https://www.linkedin.com/in/tom%C3%A1s-uh%C3%ADa-otero-b10748345/"><Linkedin class=" w-4 h-4 lg:w-6 lg:h-6"/>Linkedin</SocialPill>
+						<SocialPill href="https://github.com/TomasUhiaOtero?tab=repositories"><Github class=" w-4 h-4 lg:w-6 lg:h-6"/>Github</SocialPill>
+						<SocialPill href="mailto:uhiaoterotomas@gmail.com"><Mail class=" w-4 h-4 lg:w-6 lg:h-6"/>uhiaoterotomas@gmail.com</SocialPill>
+					</nav>
+				</li>
+			</ul>
+		</SectionContainer>
+
+		<SectionContainer class="pt-40" id="experiencia">
+			<h2 class="text-3xl font-semibold mb-8 flex gap-x-3 items-center">
+				<Book class="w-12 h-12"/>Estudios y experiencia
+			</h2>
+			<Experiencia />
+		</SectionContainer>
+
+		<SectionContainer class="pt-40" id="proyectos">
+			<h2 class="text-3xl font-semibold mb-8 flex gap-x-3 items-center">
+				<Code class="w-12 h-12"/>Proyectos
+			</h2>
+			<Projects />
+		</SectionContainer>
+	</main>
 </Layout>

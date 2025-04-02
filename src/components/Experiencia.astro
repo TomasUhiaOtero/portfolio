@@ -1,0 +1,44 @@
+---
+import ExperienciaItem from "./ExperienciaItem.astro";
+
+const EXPERIENCIA = [
+{
+        title: "Estudios Online Curso Fullstack",
+        company: "Helsinki University",
+        date: "Febrero 2025 - Actualmente",
+        description: "FrontEnd: JavaScript, React, Tailwind CSS. Backend: Node.js, Express.js, MongoDB, MySQL.",  
+        finalizado: "En curso...",
+    },
+    {
+        title: "Prácticas Desarrollador Web",
+        company: "Logg for Sport",
+        date: "Septiembre 2024 - Enero 2025",
+        description: "Desarrollo de aplicaciones web utilizando React y Tailwind CSS.",
+        finalizado: "Finalizado",
+    },
+    {
+        title: "2do año Desarrollo Aplicaciones Multiplataforma",
+        company: "Academia Tesdai",
+        date: "Septiembre 2023 - Diciembre 2024",
+        description: "Programación multimedia y dispositivos móviles (Java), Programación de Servicios y Procesos, Desarrollo de aplicaciones e interfaces en C#, Java Hibernate, Bases de datos Relacionales(MySQL).",
+        finalizado: "Finalizado",
+    },
+    {
+        title: "1er año Desarrollo Aplicaciones Multiplataforma",
+        company: "Academia Tesdai",
+        date: "Septiembre 2022 - Junio 2022",
+        description: "Programación Java, JavaScript, PHP, Python, Odoo, SQL y HTML/CSS.",
+        finalizado: "Finalizado",
+    },
+];
+---
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">   
+    {
+        EXPERIENCIA.map(experiencia => (
+            <li class="mb-10 ms-4">
+                <ExperienciaItem {...experiencia}/>
+            </li>
+        ))
+    }               
+</ol>
+

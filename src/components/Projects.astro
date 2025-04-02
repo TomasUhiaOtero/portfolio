@@ -1,0 +1,90 @@
+---
+import HTML from "./icons/Html.astro";
+import CSS from "./icons/CSS.astro";
+import MySQL from "./icons/MySQL.astro";
+import Bootstrap5 from "./icons/Bootstrap5.astro";
+import PHP from "./icons/PHP.astro";
+const TAGS = {
+    HTML: {
+        name: "HTML",
+        color: "bg-black-500",
+        icono: HTML,
+    },
+    CSS: {
+        name: "CSS",
+        color: "bg-white-500",
+        icono: CSS,
+    },
+    MySQL: {
+        name: "MySQL",
+        color: "bg-white-500",
+        icono: MySQL,
+    },
+    Bootstrap5: {
+        name: "Bootstrap5",
+        color: "bg-white-500",
+        icono: Bootstrap5,
+    },
+    PHP: {
+        name: "PHP",
+        color: "bg-white-500",
+        icono: PHP,
+    },
+}
+const PROJECTS = [
+    {
+        title: "TOP MUSIC",
+        description: "Página web sobre tops musicales que maneja busquedas y gestiona una base de datos de artistas, canciones, discos etc...",
+        link: "http://topmusic.mypressonline.com/",
+        github: "#",
+        image: "/public/mockup_final_.webp",
+        // extraImage: "/public/mockup_final_2.webp",
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.MySQL, TAGS.Bootstrap5, TAGS.PHP],
+    },
+    {
+        title: "Proyecto 2",
+        description: "Descripción del proyecto 2",
+        link: "#",
+        github: "#",
+        image: "https://img.freepik.com/foto-gratis/codificacion-programas-informaticos-pantalla_53876-138060.jpg?semt=ais_hybrid&w=740",
+        tags: ["React", "Node.js"],
+    },
+    {
+        title: "Proyecto 3",
+        description: "Descripción del proyecto 3",
+        link: "#",
+        github: "#",
+        image: "https://img.freepik.com/foto-gratis/codificacion-programas-informaticos-pantalla_53876-138060.jpg?semt=ais_hybrid&w=740",
+        tags: ["Python", "Django"],
+    },
+    
+]
+---
+
+{
+    PROJECTS.map(({image, title, description, tags}) => (
+        <article class="pb-20">
+            <h3 class="text-2xl font-semibold text text-purple-400 mb-2">{title}</h3>
+            <p class="text-xl mb-2">{description}</p>
+            <ul class="flex gap-7 flex-wrap mt-5">
+               {tags.map((tag) => (
+                typeof tag === 'object' && tag.icono ? (
+                    <li>
+                       <span class="tag.class"><tag.icono class="w-10 h-10"/></span>
+                        </li>
+                ) : (
+                    <li>{tag}</li>
+                )
+               ))}
+            </ul>
+            <img class="rounded mt-20 mb-10 w-[450px] h-[300px] lg:w-[1000px] lg:h-[600px] hover:scale-110 lg:hover:scale-125 transition-transform duration-500 ease-in-out mx-auto"
+             src={image} alt={`Captura de pantalla del proyecto ${image}`} />
+            
+             {/* 
+                {extraImage && (
+                <img class="rounded mt-40 mb-10 w-[450px] h-[250px] lg:w-[1000px] lg:h-[600px] hover:scale-110 lg:hover:scale-125 transition-transform duration-500 ease-in-out mx-auto"
+                src={extraImage} alt={`Imagen adicional para el proyecto ${title}`}/>
+                )} */}
+        </article>
+    ))
+}
