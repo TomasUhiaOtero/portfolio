@@ -2,7 +2,8 @@
 const { class: className } = Astro.props;
 ---
 
-<svg
+<svg 
+    {...Astro.props}
     class=`w-7 h-7  ${className}`
     viewBox="0 0 256 250"
     fill="white"
