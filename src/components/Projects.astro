@@ -6,6 +6,9 @@ import Bootstrap5 from "./icons/Bootstrap5.astro";
 import PHP from "./icons/PHP.astro";
 import JavaScript from "./icons/JavaScript.astro";
 import Github from "./icons/Github.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
+import TailwindCSS from "./icons/TailwindCSS.astro";
+
 const TAGS = {
     HTML: {
         name: "HTML",
@@ -42,6 +45,16 @@ const TAGS = {
         color: "bg-white-500",
         icono: Github,
     },
+    Astro: {
+        name: "Astro",
+        color: "bg-white-500",
+        icono: AstroIcon,
+    },
+    TailwindCSS: {
+        name: "TailwindCSSS",
+        color: "bg-white-500",
+        icono: TailwindCSS,
+    },
 }
 const PROJECTS = [
     {
@@ -49,7 +62,7 @@ const PROJECTS = [
         description: "Página web sobre tops musicales que maneja busquedas y gestiona una base de datos de artistas, canciones, discos etc...",
         link: "http://topmusic.mypressonline.com/",
         github: "https://github.com/TomasUhiaOtero/Proyecto-CSDAM",
-        image: "/public/mockup_final_.webp",
+        image: "/mockup_final_.webp",
         // extraImage: "/public/mockup_final_2.webp",
         tags: [TAGS.HTML, TAGS.CSS, TAGS.MySQL, TAGS.Bootstrap5, TAGS.PHP, TAGS.JavaScript, TAGS.Github],
     },
@@ -58,60 +71,63 @@ const PROJECTS = [
         description: "El clásico juego de 3 en raya, donde puedes jugar contra otro jugador.",
         link: "https://github.com/TomasUhiaOtero/Practice/tree/master/3%20en%20raya",
         github: "https://github.com/TomasUhiaOtero/Practice/tree/master/3%20en%20raya",
-        image: "/public/3_enraya_.webp",
-        tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript, TAGS.Github],
+        image: "/3_enraya_.webp",
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript, TAGS.Github,],
     },
     {
-        title: "Proyecto 3",
-        description: "Descripción del proyecto 3",
-        link: "",
-        github: "#",
-        image: "https://img.freepik.com/foto-gratis/codificacion-programas-informaticos-pantalla_53876-138060.jpg?semt=ais_hybrid&w=740",
-        tags: ["Python", "Django"],
+        title: "Mi Portfolio!",
+        description: "Este Portfolio esta hecho utilizando la combinacion de Astro y TailwindCSS ademas de algo de JavaScript.",
+        link: "https://github.com/TomasUhiaOtero/Practice/tree/master/3%20en%20raya",
+        github: "https://github.com/TomasUhiaOtero/Practice/tree/master/3%20en%20raya",
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript,TAGS.Astro,TAGS.TailwindCSS, TAGS.Github],
     },
-    
 ]
 ---
 
 {
-    PROJECTS.map(({image, title, description, tags, link, github}) => (
+    PROJECTS.map(({ image, title, description, tags, link, github }, index) => (
         <article class="pb-20">
             <h3 class="text-2xl font-semibold text text-purple-400 mb-2">{title}</h3>
             <p class="text-xl mb-2">{description}</p>
             <ul class="flex gap-7 flex-wrap mt-5">
-    {tags.map((tag) => (
-        typeof tag === "object" && tag.icono ? (
-            <li>
-                {tag.name === "Github" ? (
-                    <a
-                        href={github} 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="flex items-center gap-2 text-white px-3 rounded hover:scale-125 transition ease-in-out duration-300"
-                    >
-                        <tag.icono class="w-6 h-6 lg:w-10 lg:h-10" />
-                        <span>{tag.name}</span>
-                    </a>
-                ) : (
-                    <span class="flex items-center gap-2">
-                        <tag.icono class="w-6 h-6 lg:w-10 lg:h-10" />
-                        <span>{tag.name}</span>
-                    </span>
-                )}
-            </li>
-        ) : (
-            <li>{tag}</li>
-        )
-    ))}
-</ul>
-            <a href={link} target="_blank" rel="noopener noreferrer"><img class="rounded mt-20 mb-10 w-[450px] h-[300px] lg:w-[1000px] lg:h-[600px] hover:scale-110 lg:hover:scale-125 transition-transform duration-500 ease-in-out mx-auto"
-             src={image} alt={`Captura de pantalla del proyecto ${image}`} /></a>
-            
-             {/* 
-                {extraImage && (
-                <img class="rounded mt-40 mb-10 w-[450px] h-[250px] lg:w-[1000px] lg:h-[600px] hover:scale-110 lg:hover:scale-125 transition-transform duration-500 ease-in-out mx-auto"
-                src={extraImage} alt={`Imagen adicional para el proyecto ${title}`}/>
-                )} */}
+                {tags.map((tag) => (
+                    typeof tag === "object" && tag.icono ? (
+                        <li>
+                            {tag.name === "Github" ? (
+                                <a
+                                    href={github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="flex items-center gap-2 text-white px-3 rounded hover:scale-125 transition ease-in-out duration-300"
+                                >
+                                    <tag.icono class="w-6 h-6 lg:w-10 lg:h-10" />
+                                    <span>{tag.name}</span>
+                                </a>
+                            ) : (
+                                <span class="flex items-center gap-2">
+                                    <tag.icono class="w-6 h-6 lg:w-10 lg:h-10" />
+                                    <span>{tag.name}</span>
+                                </span>
+                            )}
+                        </li>
+                    ) : (
+                        <li>{tag}</li>
+                    )
+                ))}
+            </ul>
+            {index !== PROJECTS.length - 1 && (
+                <a
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        class="rounded mt-20 mb-10 w-[450px] h-[300px] lg:w-[1000px] lg:h-[600px] hover:scale-110 lg:hover:scale-125 transition-transform duration-500 ease-in-out mx-auto"
+                        src={image}
+                        alt={`Captura de pantalla del proyecto ${title}`}
+                    />
+                </a>
+            )}
         </article>
     ))
 }
