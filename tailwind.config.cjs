@@ -1,8 +1,13 @@
-// filepath: c:\portfolio_astro\tailwind.config.cjs
 module.exports = {
-  content: ['./src/**/*.{astro,html,js,jsx,ts,tsx}'],
+  content: [
+    './src/**/*.{astro,html,js,jsx,ts,tsx}', // Asegúrate de incluir todos los archivos relevantes
+  ],
   theme: {
-    extend: {},
+    extend: {
+      translate: {
+        '-full': '-100%',
+      },
+    },
   },
   plugins: [],
 };

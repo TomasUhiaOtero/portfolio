@@ -8,6 +8,7 @@ import JavaScript from "./icons/JavaScript.astro";
 import Github from "./icons/Github.astro";
 import AstroIcon from "./icons/AstroIcon.astro";
 import TailwindCSS from "./icons/TailwindCSS.astro";
+import React from "./icons/React.astro";
 
 const TAGS = {
     HTML: {
@@ -55,6 +56,11 @@ const TAGS = {
         color: "bg-white-500",
         icono: TailwindCSS,
     },
+    React: {
+        name: "React",
+        color: "bg-white-500",
+        icono: React,
+    },
 }
 const PROJECTS = [
     {
@@ -75,10 +81,18 @@ const PROJECTS = [
         tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript, TAGS.Github,],
     },
     {
+        title: "Conversor de monedas",
+        description: "Aplicación que utiliza dos APIs (Una para las banderas y otra para el ratio de cambio de monedas) para ofrecer las conversiones entre divisas.",
+        link: "https://github.com/TomasUhiaOtero/Conversor-monedas",
+        github: "https://github.com/TomasUhiaOtero/Conversor-monedas",
+        image: "/mockup_conversor.png",
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript,TAGS.React, TAGS.Github,],
+    },
+    {
         title: "Mi Portfolio!",
         description: "Este Portfolio esta hecho utilizando la combinacion de Astro y TailwindCSS ademas de algo de JavaScript.",
-        link: "https://github.com/TomasUhiaOtero/Practice/tree/master/3%20en%20raya",
-        github: "https://github.com/TomasUhiaOtero/Practice/tree/master/3%20en%20raya",
+        link: "https://github.com/TomasUhiaOtero/portfolio",
+        github: "https://github.com/TomasUhiaOtero/portfolio",
         tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript,TAGS.Astro,TAGS.TailwindCSS, TAGS.Github],
     },
 ]

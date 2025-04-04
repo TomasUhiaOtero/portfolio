@@ -1,5 +1,5 @@
 <header id="header" class="flex justify-center items-center w-full py-5 mx-auto">
-    <nav id="navbar" class="bg-[#2c2c2c] fixed w-full z-20 top-0 start-0 transition-transform duration-300 ease-in-out  backdrop-blur-lg  shadow-sm">
+    <nav id="navbar" class="bg-[#2c2c2c] fixed w-full z-20 top-0 start-0 transition-transform duration-300 ease-in-out backdrop-blur-lg shadow-sm">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-6 bg-gray/60">
             <div class="flex md:order-2 space-x-5 md:space-x-0 rtl:space-x-reverse">
                 <a href="/public/CurriculumVitae.pdf" download
@@ -37,45 +37,82 @@
                 class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
                 id="navbar-sticky"
             >
-            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:space-x-10 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent bg-transparent md:dark:bg-transparent dark:border-gray-700">
-                <li>
-                    <a
-                        href="#"
-                        class="block py-3 px-4 text-purple-500 text-lg md:text-2xl rounded-sm md:p-0 md:dark:text-purple-500 relative overflow-hidden group"
-                    >
-                        Inicio
-                        <span class="absolute inset-x-0 bottom-0 h-[2px] bg-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="#sobre-mi"
-                        class="block py-3 px-4 text-gray-900 text-lg md:text-2xl rounded-sm hover:text-purple-500 md:hover:text-purple-500 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:text-purple-500 relative overflow-hidden group"
-                    >
-                        Contacto
-                        <span class="absolute inset-x-0 bottom-0 h-[2px] bg-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="#experiencia"
-                        class="block py-3 px-4 text-gray-900 text-lg md:text-2xl rounded-sm hover:text-purple-500 md:hover:text-purple-500 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:text-purple-500 relative overflow-hidden group"
-                    >
-                        Experiencia
-                        <span class="absolute inset-x-0 bottom-0 h-[2px] bg-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="#proyectos"
-                        class="block py-3 px-4 text-gray-900 text-lg md:text-2xl rounded-sm hover:text-purple-500 md:hover:text-purple-500 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:text-purple-500 relative overflow-hidden group"
-                    >
-                        Proyectos
-                        <span class="absolute inset-x-0 bottom-0 h-[2px] bg-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
-                    </a>
-                </li>
+                <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:space-x-10 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent bg-transparent md:dark:bg-transparent dark:border-gray-700">
+                    <li>
+                        <a
+                            href="#"
+                            class="block py-3 px-4 text-purple-500 text-lg md:text-2xl rounded-sm md:p-0 md:dark:text-purple-500 relative overflow-hidden group"
+                        >
+                            Inicio
+                            <span class="absolute inset-x-0 bottom-0 h-[2px] bg-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#sobre-mi"
+                            class="block py-3 px-4 text-gray-900 text-lg md:text-2xl rounded-sm hover:text-purple-500 md:hover:text-purple-500 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:text-purple-500 relative overflow-hidden group"
+                        >
+                            Contacto
+                            <span class="absolute inset-x-0 bottom-0 h-[2px] bg-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#experiencia"
+                            class="block py-3 px-4 text-gray-900 text-lg md:text-2xl rounded-sm hover:text-purple-500 md:hover:text-purple-500 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:text-purple-500 relative overflow-hidden group"
+                        >
+                            Experiencia
+                            <span class="absolute inset-x-0 bottom-0 h-[2px] bg-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#proyectos"
+                            class="block py-3 px-4 text-gray-900 text-lg md:text-2xl rounded-sm hover:text-purple-500 md:hover:text-purple-500 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:text-purple-500 relative overflow-hidden group"
+                        >
+                            Proyectos
+                            <span class="absolute inset-x-0 bottom-0 h-[2px] bg-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
-    <script src="/src/scripts/navbar.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        let lastScrollY = window.scrollY;
+        const navbar = document.getElementById("navbar");
+      
+        if (!navbar) {
+          console.error("Navbar element not found!");
+          return;
+        }
+      
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > lastScrollY) {
+            navbar.classList.add("-translate-y-full");
+          } else {
+            navbar.classList.remove("-translate-y-full");
+          }
+          lastScrollY = window.scrollY;
+        });
+      });
+    </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const toggleButton = document.querySelector('[data-collapse-toggle="navbar-sticky"]');
+        const navbarSticky = document.getElementById("navbar-sticky");
+
+        if (!toggleButton || !navbarSticky) {
+            console.error("Toggle button or navbar-sticky not found!");
+            return;
+        }
+
+        toggleButton.addEventListener("click", () => {
+            navbarSticky.classList.toggle("hidden");
+        });
+    });
+</script>
+    
 </header>
